@@ -2,7 +2,61 @@
 
 ## No 1
 
+### Soal :
+
+> a. Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut?
+> b. Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut?
+> c. Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
+> d. Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
+
+
+### Jawaban :
+
+> a. Untuk melihat sequence number (raw), pertama-tama dilakukan filter "ftp" untuk melihat aktivitas yang terjadi.
+    //gambar1.1
+    Selanjutnya yaitu klik request yang ada, contohnya dalam hal ini dipilih `Request: STOR c75-GrabThePhisher.zip`
+    //gambar1.2
+    Klik pada `Transmission Control Protocol` pada bagian bawah, maka akan terlihat sequence number (raw)-nya
+    //gambar1.3
+
+> b. Untuk melihat acknowledge number (raw), langkah yang dilakukan sama seperti untuk melihat sequence number (raw).
+    Tepatnya acknowledge number (raw) ada di bawah sequence number (raw).
+    //gambar1.4
+
+> c. Jika sebelumnya yang dilihat adalah bagian Request, maka untuk pertanyaan c dan d yang dipilih adalah hasil responsenya.
+    Dalam hal ini berarti dipilih `Response: 150 Opening BINARY mode data connection for c75-GrabThePhisher.zip`
+    //gambar1.5
+    Langkah berikutnya yaitu sama tinggal melihat sequence number (raw)
+    //gambar1.6
+
+> d. Dan juga acknowledge number (raw)-nya
+    //gambar1.7
+
+### Bukti :
+
+Jawaban :
+    //gambar1.99
+
 ## No 2
+
+### Soal :
+
+> Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
+
+
+### Jawaban :
+
+> Untuk mengetahui web server yang digunakan maka langkah awal setelah membuka file .pcapng adalah gunakan filter `http`
+    //gambar2.1
+    Selanjutnya klik kanan pada protocol HTTP, pilih follow -> HTTP stream. Akan terlihat langsung servernya...
+    //gambar2.2
+
+
+### Bukti :
+
+Jawaban :
+    //gambar2.99
+
 
 ## No 3
 
@@ -72,6 +126,25 @@ Screenshot wireshark :
 
 ## No 7
 
+### Soal :
+
+> Berapa jumlah packet yang menuju IP 184.87.193.88?
+
+
+### Jawaban :
+
+> Karena yang dicari adalah IP sebagai tujuan, maka dapat digunakan filter `ip.dst` dan menambahkan IP yang dituju
+    Buka file .pcapng lalu masukkan filter `ip.dst == 184.87.193.88`
+    //gambar7.1
+    Dari gambar di atas bisa dihitung langsung packet yang menuju IP 184.87.193.88 ada sejumlah 6.
+
+
+### Bukti :
+
+Jawaban :
+    //gambar7.99
+
+
 ## No 8
 
 ### Soal :
@@ -94,4 +167,48 @@ No 8 bisa dijawab menggunakan display filter tersebut dengan penjelasan sebagai 
 
 ## No 9
 
+### Soal :
+
+> Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!
+
+
+### Jawaban :
+
+> Seperti yang sudah dipelajari pada modul, untuk mendapatkan paket yang berasal dari IP tertentu maka bisa menggunakan `ip.src`
+    Selanjutnya, untuk mendapatkan paket yang menuju ke IP tertentu maka bisa menggunakan `ip.dst`.
+
+    Karena, pada soal diminta dua kondisi maka bisa gabungkan saja kedua kondisi tersebut dengan `&&`.
+    Sehingga kueri filter akan menjadi...
+    `ip.src == 10.51.40.1 && ip.dst != 10.39.55.34`
+
+
+### Bukti :
+
+Jawaban :
+    //gambar9.99
+
+
 ## No 10
+
+### Soal :
+
+> Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet, format [username]:[password]!
+
+
+### Jawaban :
+
+> Pertama buka file .pcapng
+    Kemudian karena kita akan mencari Telnet, maka bisa dilakukan filter menggunakan `tcp.port == 23` karena port 23 berarti Telnet.
+    //gambar10.1
+    Dilanjutkan dengan klik kanan pada Protocol Telnet, pilih follow -> TCP Stream
+    //gambar10.2
+    Dari gambar di atas dapat terlihat, bahwa untuk usernamenya adalah `dhafin` dan passwordnya adalah `kesayangannyak0k0`.
+
+
+
+### Bukti :
+
+Jawaban :
+    //gambar10.99
+
+
