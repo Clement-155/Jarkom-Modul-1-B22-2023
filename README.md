@@ -5,37 +5,48 @@
 ### Soal :
 
 > a. Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut?
-> b. Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut?
+
+>  b. Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut?
+
 > c. Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
+
 > d. Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
 
 
 ### Jawaban :
 
-> a. Untuk melihat sequence number (raw), pertama-tama dilakukan filter "ftp" untuk melihat aktivitas yang terjadi.
-    //gambar1.1
-    Selanjutnya yaitu klik request yang ada, contohnya dalam hal ini dipilih `Request: STOR c75-GrabThePhisher.zip`
-    //gambar1.2
-    Klik pada `Transmission Control Protocol` pada bagian bawah, maka akan terlihat sequence number (raw)-nya
-    //gambar1.3
+a. Untuk melihat sequence number (raw), pertama-tama dilakukan filter "ftp" untuk melihat aktivitas yang terjadi.
+    ![1 1](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/24f291e1-064d-4301-bdcc-caa14bda9feb)
 
-> b. Untuk melihat acknowledge number (raw), langkah yang dilakukan sama seperti untuk melihat sequence number (raw).
+Selanjutnya yaitu klik request yang ada, contohnya dalam hal ini dipilih `Request: STOR c75-GrabThePhisher.zip`
+    ![1 2](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/ffb462e4-a972-4ff8-aa8b-b0577986050b)
+
+Klik pada `Transmission Control Protocol` pada bagian bawah, maka akan terlihat sequence number (raw)-nya
+    ![1 3](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/db609e05-d27f-4eb0-9102-cc4567dca9f6)
+    
+
+b. Untuk melihat acknowledge number (raw), langkah yang dilakukan sama seperti untuk melihat sequence number (raw).
     Tepatnya acknowledge number (raw) ada di bawah sequence number (raw).
-    //gambar1.4
+    ![1 4](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/f162cb21-38ec-4472-b08e-a7250f25544d)
 
-> c. Jika sebelumnya yang dilihat adalah bagian Request, maka untuk pertanyaan c dan d yang dipilih adalah hasil responsenya.
+
+c. Jika sebelumnya yang dilihat adalah bagian Request, maka untuk pertanyaan c dan d yang dipilih adalah hasil responsenya.
     Dalam hal ini berarti dipilih `Response: 150 Opening BINARY mode data connection for c75-GrabThePhisher.zip`
-    //gambar1.5
-    Langkah berikutnya yaitu sama tinggal melihat sequence number (raw)
-    //gambar1.6
+    ![1 5](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/04bbac02-bae0-405b-9c6f-a124a8cd0a8a)
 
-> d. Dan juga acknowledge number (raw)-nya
-    //gambar1.7
+Langkah berikutnya yaitu sama tinggal melihat sequence number (raw)
+    ![1 6](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/f0888e3b-14cc-47de-a665-f8fe3b50f527)
+
+
+d. Dan juga acknowledge number (raw)-nya
+    ![1 7](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/da0d8ef6-5dad-444c-823e-85d02d66bf66)
+
 
 ### Bukti :
 
 Jawaban :
-    //gambar1.99
+    ![1 99](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/39e9901f-b71e-4923-b52f-5ed0c676e507)
+
 
 ## No 2
 
@@ -46,16 +57,17 @@ Jawaban :
 
 ### Jawaban :
 
-> Untuk mengetahui web server yang digunakan maka langkah awal setelah membuka file .pcapng adalah gunakan filter `http`
-    //gambar2.1
-    Selanjutnya klik kanan pada protocol HTTP, pilih follow -> HTTP stream. Akan terlihat langsung servernya...
-    //gambar2.2
+Untuk mengetahui web server yang digunakan maka langkah awal setelah membuka file .pcapng adalah gunakan filter `http`
+    ![2 1](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/fd298ddc-e35d-4df0-af8d-bdd171e9a030)
+
+Selanjutnya klik kanan pada protocol HTTP, pilih follow -> HTTP stream. Akan terlihat langsung servernya...
+    ![2 2](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/bc98ee0f-89b1-47bb-89a4-58e6cb896560)
 
 
 ### Bukti :
 
 Jawaban :
-    //gambar2.99
+    ![2 99](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/2f98f7d8-25e7-44b6-ae31-aadf0805550f)
 
 
 ## No 3
@@ -205,16 +217,18 @@ Maka, jika kita cari paket nomor 7812 dan melihat alamat IP Sourcenya, kita mend
 
 ### Jawaban :
 
-> Karena yang dicari adalah IP sebagai tujuan, maka dapat digunakan filter `ip.dst` dan menambahkan IP yang dituju
+Karena yang dicari adalah IP sebagai tujuan, maka dapat digunakan filter `ip.dst` dan menambahkan IP yang dituju
     Buka file .pcapng lalu masukkan filter `ip.dst == 184.87.193.88`
-    //gambar7.1
-    Dari gambar di atas bisa dihitung langsung packet yang menuju IP 184.87.193.88 ada sejumlah 6.
+    
+![7 1](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/f71ee0ae-28e8-4118-8a53-4a149fdb9ffe)
+
+Dari gambar di atas bisa dihitung langsung packet yang menuju IP 184.87.193.88 ada sejumlah 6.
 
 
 ### Bukti :
 
 Jawaban :
-    //gambar7.99
+    ![7 99](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/0b5b340a-3188-4741-8c55-4d731aad3701)
 
 
 ## No 8
@@ -246,18 +260,18 @@ No 8 bisa dijawab menggunakan display filter tersebut dengan penjelasan sebagai 
 
 ### Jawaban :
 
-> Seperti yang sudah dipelajari pada modul, untuk mendapatkan paket yang berasal dari IP tertentu maka bisa menggunakan `ip.src`
+Seperti yang sudah dipelajari pada modul, untuk mendapatkan paket yang berasal dari IP tertentu maka bisa menggunakan `ip.src`
     Selanjutnya, untuk mendapatkan paket yang menuju ke IP tertentu maka bisa menggunakan `ip.dst`.
 
-    Karena, pada soal diminta dua kondisi maka bisa gabungkan saja kedua kondisi tersebut dengan `&&`.
+ Karena, pada soal diminta dua kondisi maka bisa gabungkan saja kedua kondisi tersebut dengan `&&`.
     Sehingga kueri filter akan menjadi...
-    `ip.src == 10.51.40.1 && ip.dst != 10.39.55.34`
+```ip.src == 10.51.40.1 && ip.dst != 10.39.55.34```
 
 
 ### Bukti :
 
 Jawaban :
-    //gambar9.99
+    ![9 99](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/fd939164-8b86-480f-ad53-ddc91eddd25d)
 
 
 ## No 10
@@ -269,18 +283,20 @@ Jawaban :
 
 ### Jawaban :
 
-> Pertama buka file .pcapng
+Pertama buka file .pcapng
     Kemudian karena kita akan mencari Telnet, maka bisa dilakukan filter menggunakan `tcp.port == 23` karena port 23 berarti Telnet.
-    //gambar10.1
-    Dilanjutkan dengan klik kanan pada Protocol Telnet, pilih follow -> TCP Stream
-    //gambar10.2
-    Dari gambar di atas dapat terlihat, bahwa untuk usernamenya adalah `dhafin` dan passwordnya adalah `kesayangannyak0k0`.
+    ![10 1](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/24645fd6-45da-4157-9827-602caf8c566d)
+
+Dilanjutkan dengan klik kanan pada Protocol Telnet, pilih follow -> TCP Stream
+    ![10 2](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/b538fc49-38a8-4aba-80d0-40f2273deed6)
+
+Dari gambar di atas dapat terlihat, bahwa untuk usernamenya adalah `dhafin` dan passwordnya adalah `kesayangannyak0k0`.
 
 
 
 ### Bukti :
 
 Jawaban :
-    //gambar10.99
+    ![10 99](https://github.com/Clement-155/Jarkom-Modul-1-B22-2023/assets/99221296/53bcd267-8e29-449e-bdc9-53909b587ea4)
 
 
